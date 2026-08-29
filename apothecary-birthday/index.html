@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 🌿 </title>
+  <meta name="description"
+    content="Un detalle especial para Koalita inspirada en La Boticaria (Kusuriya no Hitorigoto).">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐨</text></svg>">
+</head>
+
+<body>
+
+  <!-- PANTALLA DE SEGURIDAD / CONTRASEÑA (333) -->
+  <div class="password-overlay" id="password-overlay">
+    <div class="password-card" id="password-card">
+      <div class="password-seal">
+        <span class="lock-icon">🔒</span>
+      </div>
+      <h2 class="password-title">Is very easy</h2>
+      <p class="password-subtitle">Ingresa la clave secreta de 3 dígitos para ver tu sorpresa 🌿</p>
+
+      <div class="password-display-box">
+        <input type="password" id="password-input" maxlength="3" readonly placeholder="• • •" autocomplete="off">
+      </div>
+
+      <div class="password-keypad">
+        <button class="key-btn" onclick="appendPin('1')">1</button>
+        <button class="key-btn" onclick="appendPin('2')">2</button>
+        <button class="key-btn" onclick="appendPin('3')">3</button>
+        <button class="key-btn" onclick="appendPin('4')">4</button>
+        <button class="key-btn" onclick="appendPin('5')">5</button>
+        <button class="key-btn" onclick="appendPin('6')">6</button>
+        <button class="key-btn" onclick="appendPin('7')">7</button>
+        <button class="key-btn" onclick="appendPin('8')">8</button>
+        <button class="key-btn" onclick="appendPin('9')">9</button>
+        <button class="key-btn action-key" onclick="clearPin()">⌫</button>
+        <button class="key-btn" onclick="appendPin('0')">0</button>
+        <button class="key-btn submit-key" onclick="submitPin()">✦</button>
+      </div>
+
+      <button class="unlock-btn" onclick="submitPin()">Desbloquear Sorpresa ✦</button>
+      <div class="password-error" id="password-error">❌ Contraseña incorrecta. ¡Inténtalo de nuevo! 🌿</div>
+      <p class="password-hint">Pista: La clave secreta es <strong>???</strong></p>
+    </div>
+  </div>
+
+  <!-- Canvas de partículas y pétalos flotantes -->
+  <canvas id="canvas-particles"></canvas>
+
+  <div class="app-container main-koalita-layout">
+
+    <!-- Barra Superior / Música -->
+    <nav class="top-nav">
+      <div class="brand-badge">
+        <span class="koala-icon">🐨</span>
+        <span>• Especial Koalita</span>
+      </div>
+      <button class="audio-btn" id="toggle-audio-btn">
+        <span id="audio-icon">🔊</span>
+        <span id="audio-text">Música de la Botica</span>
+      </button>
+    </nav>
+
+    <!-- TARJETA PRINCIPAL CON LA IMAGEN DE ARRIBA -->
+    <main class="koalita-main-card">
+      <div class="koalita-image-wrapper">
+        <img src="assets/koalita_image.png" 
+             alt="Te Quiero Mucho Koalita" 
+             class="koalita-big-showcase-img">
+        <div class="koalita-img-overlay-glow"></div>
+      </div>
+
+      <div class="koalita-card-content">
+        <div class="koala-seal-tag">
+          <span class="koala-emoji">🐨💖</span>
+        </div>
+        <h1 class="koalita-title">Te quiero Mucho Koalita</h1>
+
+        <div class="koalita-dedication-box">
+          <p class="koalita-quote-text">
+            "You're so beautiful, baby ❤️✨"
+          </p>
+        </div>
+
+        <!--<button class="magic-btn" onclick="triggerMagicEffect()">Lanzar Magia ✨</button>-->
+      </div>
+    </main>
+
+    <!-- FOOTER 
+    <footer>
+      <p>Inspirado en el anime <em>Kusuriya no Hitorigoto (La Boticaria)</em> 🌿</p>
+      <p style="margin-top: 6px; color: var(--gold-light); font-weight: 600;">Te quiero Mucho Koalita 🐨💖</p>
+    </footer>-->
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">¡Clave 333 ingresada correctamente! 🌿</div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
